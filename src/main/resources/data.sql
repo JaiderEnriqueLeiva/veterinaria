@@ -1,0 +1,1 @@
+INSERT INTO mascota (id, nombre) VALUES ( 0, 'firulais')
