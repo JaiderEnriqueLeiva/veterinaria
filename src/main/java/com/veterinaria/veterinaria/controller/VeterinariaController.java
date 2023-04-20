@@ -50,7 +50,7 @@ public class VeterinariaController {
         veterinariaService.updateUser(mascota);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable int id) {
         veterinariaService.deleteUser(id);
     }
