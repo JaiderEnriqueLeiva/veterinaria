@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/veterinaria")
@@ -29,31 +28,28 @@ public class VeterinariaController {
     }
 
     @GetMapping
-    public List<Mascota> getAllUser() {
-        return veterinariaService.readAllUser();
+    public List<Mascota> getAllPets() {
+        return veterinariaService.readAllPets();
     }
 
     @PostMapping
-    public void addUser(@RequestBody Mascota mascota) {
-        veterinariaService.createUser(mascota);
+    public void addPet(@RequestBody Mascota mascota) {
+        veterinariaService.createPet(mascota);
     }
-
 
     @GetMapping("/{id}")
     public Optional<Mascota> getUserById(@PathVariable int id) {
-        return veterinariaService.readUserById(id);
+        return veterinariaService.readPetById(id);
     }
 
-
     @PutMapping
-    public void updateUser(@RequestBody Mascota mascota) {
-        veterinariaService.updateUser(mascota);
+    public void updatePets(@RequestBody Mascota mascota) {
+        veterinariaService.updatePet(mascota);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable int id) {
-        veterinariaService.deleteUser(id);
+    public void deletePet(@PathVariable int id) {
+        veterinariaService.deletePet(id);
     }
-
 
 }
